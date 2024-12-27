@@ -61,6 +61,7 @@ test_cases = [
 
 
 
+
 """
 Formats the team results, colouring them on win/lose/draw.
 
