@@ -17,13 +17,11 @@ TBD - colorama, etc.
 
 ### Installing
 
-For running the script:
+**For running the script:**
 * Clone the whole repository, or just the `/scripts/` folder, if you are only interested in running scripts.
+* *If you want to skip installation, I have provided many outputs of iterations, ranging from 1 iteration to 1,000,000 iterations (per test case), in the "example_outputs" folder.*
 
-Want to skip running the script?
-* I have provided many outputs of iterations, ranging from 1 iteration to 1,000,000 iterations (per test case), in the "example_outputs" folder.
-
-If you are interested in the documentation:
+**If you are interested in the documentation:**
 * Sphinx documentation can be found under the `/docs/` folder, or [on my website.](https://billkilby.dev/docs/risk_combat_calculator/index.html)
 
 ### Executing program
