@@ -8,6 +8,13 @@ This project allows for the probabilities to be generated for every possible ind
 The `main.py` script will run everything required, taking in the amount of permutations (explained further in Getting Started).
 This will then output the simulation results, based on the amount of permutations, to both the console and a `csv` file containing all the parameters for each test, and result.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9a816f6f-f8d3-452e-84f9-5e2fd1ecc58d" alt="drawing" width="50%"/>
+</p>
+
+<p align="center"><i>Example console output after running 1,000,000 iterations per test case.</i></p>
+
+
 ## Getting Started
 
 ### Dependencies
