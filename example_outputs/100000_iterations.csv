@@ -1,0 +1,49 @@
+Attackers,Defenders,Attacker Leader,Defender Leader,Stronghold,Average Attacker Kills,Average Attacker Wins,Average Defender Kills,Average Defender Wins,Test Run Time
+1,1,True,True,False,0.417,0.417,0.582,0.582,5657ms
+2,1,True,True,False,0.578,0.578,0.421,0.421,6521ms
+3,1,True,True,False,0.659,0.659,0.34 ,0.34 ,6568ms
+1,2,True,True,False,0.255,0.0  ,0.744,1.0  ,7322ms
+2,2,True,True,False,0.781,0.228,1.218,0.771,6334ms
+3,2,True,True,False,1.08 ,0.371,0.919,0.628,5653ms
+1,1,False,True,False,0.279,0.279,0.72 ,0.72 ,5355ms
+2,1,False,True,False,0.416,0.416,0.583,0.583,6279ms
+3,1,False,True,False,0.492,0.492,0.507,0.507,6782ms
+1,2,False,True,False,0.138,0.0  ,0.861,1.0  ,6677ms
+2,2,False,True,False,0.613,0.146,1.386,0.853,6656ms
+3,2,False,True,False,0.885,0.238,1.114,0.761,7027ms
+1,1,True,False,False,0.581,0.581,0.418,0.418,7072ms
+2,1,True,False,False,0.745,0.745,0.254,0.254,6785ms
+3,1,True,False,False,0.826,0.826,0.173,0.173,7141ms
+1,2,True,False,False,0.42 ,0.0  ,0.579,1.0  ,6519ms
+2,2,True,False,False,1.0  ,0.314,0.999,0.685,6036ms
+3,2,True,False,False,1.324,0.51 ,0.675,0.489,5682ms
+1,1,False,False,False,0.417,0.417,0.582,0.582,5965ms
+2,1,False,False,False,0.578,0.578,0.421,0.421,6230ms
+3,1,False,False,False,0.662,0.662,0.337,0.337,6665ms
+1,2,False,False,False,0.254,0.0  ,0.745,1.0  ,6481ms
+2,2,False,False,False,0.779,0.227,1.22 ,0.772,6427ms
+3,2,False,False,False,1.078,0.37 ,0.921,0.629,6830ms
+1,1,True,True,True,0.276,0.276,0.723,0.723,6655ms
+2,1,True,True,True,0.416,0.416,0.583,0.583,6468ms
+3,1,True,True,True,0.491,0.491,0.508,0.508,5884ms
+1,2,True,True,True,0.139,0.0  ,0.86 ,1.0  ,5845ms
+2,2,True,True,True,0.61 ,0.144,1.389,0.855,6705ms
+3,2,True,True,True,0.887,0.239,1.112,0.76 ,6494ms
+1,1,False,True,True,0.167,0.167,0.832,0.832,6082ms
+2,1,False,True,True,0.267,0.267,0.732,0.732,6106ms
+3,1,False,True,True,0.333,0.333,0.666,0.666,6208ms
+1,2,False,True,True,0.065,0.0  ,0.934,1.0  ,6206ms
+2,2,False,True,True,0.501,0.079,1.498,0.92 ,5839ms
+3,2,False,True,True,0.747,0.128,1.252,0.871,5950ms
+1,1,True,False,True,0.419,0.419,0.58 ,0.58 ,6627ms
+2,1,True,False,True,0.578,0.578,0.421,0.421,5933ms
+3,1,True,False,True,0.658,0.658,0.341,0.341,6647ms
+1,2,True,False,True,0.252,0.0  ,0.747,1.0  ,6424ms
+2,2,True,False,True,0.782,0.228,1.217,0.771,6852ms
+3,2,True,False,True,1.078,0.372,0.921,0.627,6666ms
+1,1,False,False,True,0.275,0.275,0.724,0.724,6198ms
+2,1,False,False,True,0.416,0.416,0.583,0.583,5925ms
+3,1,False,False,True,0.495,0.495,0.504,0.504,6150ms
+1,2,False,False,True,0.14 ,0.0  ,0.859,1.0  ,5905ms
+2,2,False,False,True,0.611,0.146,1.388,0.853,6404ms
+3,2,False,False,True,0.886,0.239,1.113,0.76 ,6704ms
