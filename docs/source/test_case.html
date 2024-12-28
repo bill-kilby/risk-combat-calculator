@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBL8EEST8P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DBL8EEST8P');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>test_case module &#8212; Risk Combat Calculator 1.0.0 documentation</title>
+  <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=4f649999" />
+  <link rel="stylesheet" type="text/css" href="../static/alabaster.css?v=039e1c02" />
+  <script src="../static/documentation_options.js?v=8d563738"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://www.billkilby.dev/favicon.jpg">
+  <link href="https://www.billkilby.dev/content/styles/main.css" rel="stylesheet">
+  <script src="../static/doctools.js?v=888ff710"></script>
+  <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+
+  <link rel="stylesheet" href="../static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+</head>
+
+<body>
+  <header>
+    <!-- Scripts to handle default page functions. -->
+    <script src="https://www.billkilby.dev/content/scripts/documentation_page.js"></script>
+    <!-- Navbar -->
+    <nav class="absolute lg:fixed xl:top-0 w-full h-[75px] scale-x-100 z-[1000] opacity-100">
+      <div id="pageNavbar" class="w-full h-full bg-custom-50 shadow-lg
+            shadow-slate-600 lg:bg-opacity-0 lg:shadow-transparent duration-[1100ms] transition-all">
+        <!-- Centering Box -->
+        <div class="w-full max-w-screen-xl mx-auto h-full flex justify-between px-4">
+          <!-- Name on the left -->
+          <button onclick="window.location = 'https://www.billkilby.dev/index'"
+            class="hover:rotate-2 transition-transform duraiton-500
+                        left-0 sm:ml-8 h-fit sm:text-3xl my-auto bg-white py-2 px-3 sm:px-4 rounded-md -skew-x-12 lg:shadow-transparent">
+            <div class="font-bold text-2xl skew-x-12">
+              <a href="https://www.billkilby.dev/index"></a>
+              BILLKILBY.DEV
+            </div>
+          </button>
+          <!-- Links on the right -->
+          <div class="relative right-0 h-full flex">
+            <div class="relative my-auto">
+              <ul id="desktopList" class="flex font-medium text-lg bg-white rounded-md bg-opacity-0 lg:bg-opacity-100
+                             lg:-skew-x-12 transition-all duration-[1100ms]">
+                <li class="hidden lg:flex mx-5">
+                  <button onclick="window.location = 'https://www.billkilby.dev/index'"
+                    class="w-fit my-auto py-2 px-4 h-full hover:scale-[107%] transition-transform duration-300 skew-x-12">
+                    <a href="https://www.billkilby.dev/index"></a>
+                    Home Page
+                  </button>
+                </li>
+                <li class="hidden lg:flex mx-5">
+                  <button onclick="window.location = 'https://www.billkilby.dev/contact'"
+                    class="w-fit my-auto py-2 px-4 h-full hover:scale-[107%] transition-transform duration-300 skew-x-12">
+                    <a href="https://www.billkilby.dev/contact"></a>
+                    Contact Me
+                  </button>
+                </li>
+                <li class="hidden lg:flex mx-5">
+                  <button onclick="window.location = 'https://www.billkilby.dev/portfolio'"
+                    class="w-fit my-auto py-2 px-4 h-full hover:scale-[107%] transition-transform duration-300 skew-x-12">
+                    <a href="https://www.billkilby.dev/portfolio"></a>
+                    Portfolio
+                  </button>
+                </li>
+                <li class="hidden lg:flex mx-5">
+                  <button onclick="window.location = 'https://www.billkilby.dev/blog'"
+                    class="w-fit my-auto py-2 px-4 h-full hover:scale-[107%] transition-transform duration-300 skew-x-12">
+                    <a href="https://www.billkilby.dev/blog"></a>
+                    Blog
+                  </button>
+                </li>
+                <!-- Mobile dropdown button -->
+                <li class="sm:mr-4 block lg:hidden h-fit mt-2">
+                  <button onclick="toggleMobileDropdown();" class="relative w-[50px] h-[50px]">
+                    <div class="sr-only">Sitemap Dropdown Button</div>
+                    <!-- Two symbols: Open, closed. -->
+                    <svg id="navbar-dropdown-unopened" class="absolute scale-110 transition-transform top-[10px]"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+                      <line x1="3" y1="12" x2="21" y2="12" />
+                      <line x1="3" y1="6" x2="21" y2="6" />
+                      <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                    <svg id="navbar-dropdown-opened" class="absolute scale-0 transition-transform top-[10px]"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="navbar-mobile-dropdown" class="scale-y-0 lg:hidden absolute top-[75px]
+                h-fit w-screen transition-transform duration-300 origin-top">
+          <div class="w-full h-fit bg-white p-3 text-center lg:text-left">
+            <ul>
+              <li class="text-2xl w-full font-extrabold">
+                Site Map
+              </li>
+              <li class="text-lg mt-1">
+                <button onclick="window.location = 'https://www.billkilby.dev/index'"
+                  class="w-full h-fit hover:font-bold transition-all duration-300 py-1">
+                  <a href="https://www.billkilby.dev/index"></a>
+                  Home
+                </button>
+              </li>
+              <li class="text-lg">
+                <button onclick="window.location = 'https://www.billkilby.dev/contact'"
+                  class="w-full h-fit hover:font-bold transition-all duration-300 py-1">
+                  <a href="https://www.billkilby.dev/contact"></a>
+                  Contact Me
+                </button>
+              </li>
+              <li class="text-lg">
+                <button onclick="window.location = 'https://www.billkilby.dev/portfolio'"
+                  class="w-full h-fit hover:font-bold transition-all duration-300 py-1">
+                  <a href="https://www.billkilby.dev/portfolio"></a>
+                  Portfolio
+                </button>
+              </li>
+              <li class="text-lg">
+                <button onclick="window.location = 'https://www.billkilby.dev/blog'"
+                  class="w-full h-fit hover:font-bold transition-all duration-300 py-1">
+                  <a href="https://www.billkilby.dev/blog"></a>
+                  Blog
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+  </header>
+  <div class="w-full h-[75px]"></div>
+
+
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+
+
+        <div class="body" role="main">
+
+          <section id="module-test_case">
+            <span id="test-case-module"></span>
+            <h1>test_case module<a class="headerlink" href="#module-test_case" title="Link to this heading">¶</a></h1>
+            <dl class="py class">
+              <dt class="sig sig-object py" id="test_case.test_case">
+                <em class="property"><span class="pre">class</span><span class="w"> </span></em><span
+                  class="sig-prename descclassname"><span class="pre">test_case.</span></span><span
+                  class="sig-name descname"><span class="pre">test_case</span></span><span class="sig-paren">(</span><em
+                  class="sig-param"><span class="n"><span class="pre">attackers</span></span><span class="p"><span
+                      class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                      class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span
+                      class="pre">defenders</span></span><span class="p"><span class="pre">:</span></span><span
+                    class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em
+                  class="sig-param"><span class="n"><span class="pre">attacker_has_leader</span></span><span
+                    class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                      class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span
+                      class="pre">defender_has_leader</span></span><span class="p"><span
+                      class="pre">:</span></span><span class="w"> </span><span class="n"><span
+                      class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span
+                      class="pre">has_stronghold</span></span><span class="p"><span class="pre">:</span></span><span
+                    class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span
+                  class="sig-paren">)</span><a class="headerlink" href="#test_case.test_case"
+                  title="Link to this definition">¶</a></dt>
+              <dd>
+                <p>Bases: <code class="xref py py-class docutils literal notranslate"><span
+                      class="pre">object</span></code></p>
+                <p>A class that represents a test case.</p>
+                <dl class="simple">
+                  <dt>Attributes:</dt>
+                  <dd>
+                    <p>attackers (int): The amount of attackers.
+                      defenders (int): The amount of defenders.
+                      attacker_has_leader (bool): Whether or not the attacker has a leader (+1 to top dice if so).
+                      defender_has_leader (bool): Whether or not the defender has a leader (+1 to top dice if so).
+                      has_stronghold (bool): Whether or not there is a stronghold in the defender’s tile (+1 to top dice
+                      if so).</p>
+                  </dd>
+                </dl>
+              </dd>
+            </dl>
+
+          </section>
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+        <h1 class="logo"><a href="../index.html">Risk Combat Calculator</a></h1>
+
+
+
+
+
+
+
+
+        <h3>Navigation</h3>
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+        <ul>
+          <li class="toctree-l1"><a class="reference internal" href="../main.html">main</a></li>
+        </ul>
+
+        <div class="relations">
+          <h3>Related Topics</h3>
+          <ul>
+            <li><a href="../index.html">Documentation overview</a>
+              <ul>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="searchbox" style="display: none" role="search">
+          <h3 id="searchlabel">Quick search</h3>
+          <div class="searchformwrapper">
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false" />
+              <input type="submit" value="Go" />
+            </form>
+          </div>
+        </div>
+        <script>
+          document.getElementById('searchbox').style.display = "block"
+        </script>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    &copy;2024, William Kilby.
+
+    |
+    Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+    &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+
+    |
+    <a href="../_sources/source/test_case.rst.txt" rel="nofollow">Page source</a>
+  </div>
+
+
+
+
+</body>
+
+</html>
