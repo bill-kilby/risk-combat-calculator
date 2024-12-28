@@ -1,7 +1,7 @@
 from test_case import test_case
 
 
-# Maybe a bit too verbose... but useful for testing.
+# Maybe a bit too verbose... but useful for testing. Just a collection of every possible situation in LOTR risk combat.
 test_cases = [
     test_case(attackers=1, defenders=1, attacker_has_leader=True, defender_has_leader=True, has_stronghold=False),
     test_case(attackers=2, defenders=1, attacker_has_leader=True, defender_has_leader=True, has_stronghold=False),

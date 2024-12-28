@@ -1,4 +1,5 @@
 from colorama import just_fix_windows_console
+from typing import List
 from sys import argv
 from random import randrange
 from test_result import test_result
@@ -7,18 +8,18 @@ from test_cases import test_cases
 from test_output_handler import output_all_test_results
 
 
-"""
-Gets rolls depending on the amount of batallions and any modifiers.
+def get_rolls(rolls: int, has_leader: bool, has_stronghold: bool) -> List[int]:
+    """
+    Gets rolls depending on the amount of batallions and any modifiers.
 
-Args:
-    rolls (int): The amount of rolls.
-    has_leader (bool): Whether or not the batallion has a leader (+1 to highest if so).
-    has_stronghold (bool): Whether or not the batallion has a stronghold (+1 to highest if so).
+    Args:
+        rolls (int): The amount of rolls.
+        has_leader (bool): Whether or not the batallion has a leader (+1 to highest if so).
+        has_stronghold (bool): Whether or not the batallion has a stronghold (+1 to highest if so).
 
-Returns:
-    list[int]: The rolls (1-6 inclusive) for each batallion, sorted by highest first.
-"""
-def get_rolls(rolls: int, has_leader: bool, has_stronghold: bool) -> list[int]:
+    Returns:
+        List[int]: The rolls (1-6 inclusive) for each batallion, sorted by highest first.
+    """
     roll_results = []
     for _ in range(0, rolls):
         roll = randrange(1, 7) # As inclusive->exclusive.
@@ -31,16 +32,16 @@ def get_rolls(rolls: int, has_leader: bool, has_stronghold: bool) -> list[int]:
     return roll_results
 
 
-"""
-Returns the results of a singular test case.
+def get_test_case_results(test: test_case) -> List[int]:
+    """
+    Returns the results of a singular test case.
 
-Args:
-    test (test_case): The test case to run.
+    Args:
+        test (test_case): The test case to run.
 
-Returns:
-    list[int]: The results, formatted as [Attacker Kills, Defender Kills]
-"""
-def get_test_case_results(test: test_case) -> list[int]:
+    Returns:
+        List[int]: The results, formatted as [Attacker Kills, Defender Kills]
+    """
     # Get rolls.
     attacker_rolls = get_rolls(test.attackers, test.attacker_has_leader, False)
     defender_rolls = get_rolls(test.defenders, test.defender_has_leader, test.has_stronghold)
@@ -61,35 +62,36 @@ def get_test_case_results(test: test_case) -> list[int]:
     return [attacker_kills, defender_kills]
 
 
-"""
-Handles the test case results, adding these to the respective properties in the test_result object.
+def handle_test_case_results(result: test_result, results: List[int], defenders: int) -> None:
+    """
+    Handles the test case results, adding these to the respective properties in the test_result object.
 
-Args:
-    result (test_result): The result object to adjust/handle.
-    results (list[int]): The results from the single test run.
-    defenders (int): The amount of defenders, to calculate the winner.
-"""
-def handle_test_case_results(result: test_result, results: list[int], defenders: int) -> None:
+    Args:
+        result (test_result): The result object to adjust/handle.
+        results (List[int]): The results from the single test run.
+        defenders (int): The amount of defenders, to calculate the winner.
+    """
     result.add_result("attacker", results[0])
     result.add_result("defender", results[1])
+    # We count attackers "winning" if they destroy all batallions, and vice versa for defenders.
     if (results[0] == defenders):
         result.add_winner("attacker")
     else:
         result.add_winner("defender")
 
 
-"""
-Handles running a single test case x amount of times (where x is test_runs). It collects these results
-and returns them in a test_result object.
-
-Args:
-    test (test_case): The test case definition object.
-    test_runs (int): The amount of tests to be ran for this test case.
-
-Returns:
-    test_result: A test result object containing data on the test run(s) results.
-"""
 def handle_test_case_execution(test: test_case, test_runs: int) -> test_result:
+    """
+    Handles running a single test case x amount of times (where x is test_runs). It collects these results
+    and returns them in a test_result object.
+
+    Args:
+        test (test_case): The test case definition object.
+        test_runs (int): The amount of tests to be ran for this test case.
+
+    Returns:
+        test_result: A test result object containing data on the test run(s) results.
+    """
     print(f"\nRunning test case: {test}")
     result = test_result(f"{test}")
     result.start_execution_timer()
@@ -100,36 +102,38 @@ def handle_test_case_execution(test: test_case, test_runs: int) -> test_result:
     return result
 
 
-"""
-Handles running all test cases and collecting the results.
+def run_tests(test_runs: int) -> List[test_result]:
+    """
+    Handles running all test cases and collecting the results.
 
-Args:
-    test_runs (int): The amount of test runs to execute per test case.
+    Args:
+        test_runs (int): The amount of test runs to execute per test case.
 
-Returns:
-    list[test_result]: A list of the test case results.
-"""
-def run_tests(test_runs: int) -> list[test_result]:
+    Returns:
+        List[test_result]: A list of the test case results.
+    """
     test_results = []
     for test in test_cases:
         test_results.append(handle_test_case_execution(test, test_runs))
     return test_results
 
 
-"""
-Starts the pipeline for running and outputting the program.
-
-Args:
-    test_runs (int): The amount of test runs to execute per test case.
-"""
 def execute(test_runs: int) -> None:
+    """
+    Starts the pipeline for running and outputting the program.
+
+    Args:
+        test_runs (int): The amount of test runs to execute per test case.
+    """
     test_results = run_tests(test_runs)
     output_all_test_results(test_results)
-    exit()
+    exit(1)
 
 
-
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main entry point for the application.
+    """
     just_fix_windows_console()
     if len(argv) == 2:
         if argv[1].isdigit():
@@ -137,3 +141,7 @@ if __name__ == "__main__":
             execute(test_runs)
     print("Please provide amount of test runs!")
     print("For example: 'python risk_game_theory.py 500' for 500 runs per test.")
+
+
+if __name__ == "__main__":
+    main()
